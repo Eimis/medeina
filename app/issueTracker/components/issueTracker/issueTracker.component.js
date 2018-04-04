@@ -6,6 +6,7 @@ var issueTrackerController = function($rootScope, $scope, issueTrackerModel) {
   ctrl.model = issueTrackerModel;
 
   ctrl.$onInit = function() {
+    console.log('inited')
   };
 
 };
@@ -13,6 +14,6 @@ var issueTrackerController = function($rootScope, $scope, issueTrackerModel) {
 angular
   .module('issueTracker')
   .component('issueTracker', {
-    templateUrl: 'static/issueTracker/components/issueTracker/issue-tracker.html',
+    templateUrl: '/static/issueTracker/components/issueTracker/issue-tracker.html',
     controller: issueTrackerController,
   });

@@ -18,8 +18,13 @@ myApp.config(function($stateProvider) {
         ])
         .then(function(){
           return $ocLazyLoad.load([
+            //Main parent component files:
             '/static/issueTracker/components/issueTracker/issueTracker.model.js',
             '/static/issueTracker/components/issueTracker/issueTracker.component.js',
+
+            //Child components:
+            '/static/issueTracker/components/issueTracker/issues/issues.model.js',
+            '/static/issueTracker/components/issueTracker/issues/issues.component.js',
           ]);
         });
 

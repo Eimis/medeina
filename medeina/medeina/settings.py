@@ -125,5 +125,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),  # static files inside Django apps
     os.path.abspath(os.path.join(BASE_DIR, '..', 'bower_components')),
-    # os.path.abspath(os.path.join(BASE_DIR, '..', 'app')),
+    os.path.abspath(os.path.join(BASE_DIR, '..', 'app')),
 ]

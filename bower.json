@@ -1,0 +1,21 @@
+{
+  "name": "Medeina",
+  "homepage": "https://github.com/Eimis/medeina",
+  "authors": [
+    "Eimantas <eimantas.stonys@gmail.com>"
+  ],
+  "description": "A simple issue tracker app",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.0"
+  }
+}

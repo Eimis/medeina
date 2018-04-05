@@ -14,6 +14,9 @@ class IssueCategory(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'Issue categories'
+
 
 @python_2_unicode_compatible
 class Issue(models.Model):

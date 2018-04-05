@@ -25,3 +25,4 @@ Key points:
 
    * Initial Issue categories are created
    * Initial superuser (credentials: `superuser/superuser`) and staff user is created (credentials: `staff/staff`)
+   * 5 initial Issues are created

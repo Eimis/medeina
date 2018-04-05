@@ -24,4 +24,5 @@ Key points:
 * When migrations are ran:
 
    Initial Issue categories are created
+
    Initial superuser (credentials: `superuser/superuser`) and staff user is created (credentials: `staff/staff`)

@@ -1,1 +1,2 @@
 Django==1.11.12
+django-states2==1.6.10

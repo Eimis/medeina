@@ -22,4 +22,5 @@ Setup:
 Key points:
 
 * When migrations are ran:
+
    Initial Issue categories are created

@@ -17,11 +17,14 @@ class Migration(migrations.Migration):
     def create_initial_users(apps, schema_editor):
 
         staff_user = User.objects.create_user(
-            username='staff', password='staff', is_staff=True
+            username='staff', password=STAFF_PASSWORD, is_staff=True
         )
 
         superuser = User.objects.create_user(
-            username='superuser', password='superuser', is_superuser=True
+            username='superuser',
+            password=SUPERUSER_PASSWORD,
+            is_superuser=True,
+            is_staff=True,
         )
 
         print(

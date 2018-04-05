@@ -1,0 +1,14 @@
+from django.contrib import admin
+
+from medeina.models import Issue, IssueCategory
+
+
+class IssueAdmin(admin.ModelAdmin):
+    pass
+
+
+class IssueCategoryAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Issue, IssueAdmin)
+admin.site.register(IssueCategory, IssueCategoryAdmin)

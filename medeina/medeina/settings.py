@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # local apps:
     'medeina',
+
+    # 3rd party dependencies:
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

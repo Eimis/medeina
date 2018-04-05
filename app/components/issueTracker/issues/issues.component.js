@@ -6,7 +6,7 @@ var issuesController = function($rootScope, $scope, issuesModel) {
   ctrl.model = issuesModel;
 
   ctrl.$onInit = function() {
-    console.log('inited')
+    console.log('inited CHILD component')
   };
 
 };
@@ -14,6 +14,6 @@ var issuesController = function($rootScope, $scope, issuesModel) {
 angular
   .module('issueTracker')
   .component('issues', {
-    templateUrl: '/static/issueTracker/components/issueTracker/issues/issues.html',
+    templateUrl: '/static/components/issueTracker/issues/issues.html',
     controller: issuesController,
   });

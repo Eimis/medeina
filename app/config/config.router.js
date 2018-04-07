@@ -16,6 +16,13 @@ myApp.config(function($stateProvider) {
         return $ocLazyLoad.load([
           //'/static/issueTracker/components/issueTracker/issueTracker.css',
         ])
+        //extra js:
+        .then(function(){
+          return $ocLazyLoad.load([
+            '/static/components-font-awesome/css/fontawesome-all.css',
+          ]);
+
+        })
         .then(function(){
           return $ocLazyLoad.load([
             //Main parent component files:

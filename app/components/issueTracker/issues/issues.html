@@ -9,19 +9,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td class="column1">2017-09-29 01:22</td>
-      <td class="column2">200398</td>
-      <td class="column3">iPhone X 64Gb Grey</td>
-      <td class="column4">$999.00</td>
-      <td class="column5">1</td>
-    </tr>
-    <tr>
-      <td class="column1">2017-09-28 05:57</td>
-      <td class="column2">200397</td>
-      <td class="column3">Samsung S8 Black</td>
-      <td class="column4">$756.00</td>
-      <td class="column5">1</td>
+    <tr ng-repeat="issue in $ctrl.issues">
+      <td class="column1">{{ issue.submitter.username }}</td>
+      <td class="column2">{{ issue.category.name }}</td>
+      <td class="column3">{{ issue.text_description }}</td>
+      <td class="column4">{{ issue.status }}</td>
+      <td class="column5">{{ issue.solver.username }}</td>
     </tr>
   </tbody>
 </table>

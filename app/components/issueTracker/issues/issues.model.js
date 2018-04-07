@@ -2,7 +2,7 @@ angular.module('issueTracker')
   .factory('issuesModel', function($http) {
 
     //Synchronizes data with backend server:
-    function updateData(scope, items) {
+    function listData(scope, items) {
 
       var config = {
         headers: {
@@ -10,18 +10,18 @@ angular.module('issueTracker')
         },
       };
 
-      var data = {
-        items: items,
-      };
-
-      return $http.post('/issues/update', data, config)
+      return $http.get('/issues/list', config)
         .then(function(response) {
-          return true;
+          var issues = angular.fromJson(response.data);
+
+          return {
+            issues: issues,
+          };
         })
         .catch(function(response) {});
     }
 
     return {
-      updateData: updateData,
+      listData: listData,
     };
   });

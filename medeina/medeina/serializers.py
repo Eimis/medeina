@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('username', )
 
 
-class CategorySerializer(serializers.ModelSerializer):
+class IssueCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = IssueCategory
         fields = ('name', )
@@ -20,7 +20,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class IssueSerializer(serializers.ModelSerializer):
     submitter = UserSerializer()
     solver = UserSerializer()
-    category = CategorySerializer()
+    category = IssueCategorySerializer()
 
     class Meta:
         model = Issue

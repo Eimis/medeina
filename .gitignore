@@ -4,3 +4,4 @@
 *.sqlite3
 virtualenv/
 bower_components/
+tags

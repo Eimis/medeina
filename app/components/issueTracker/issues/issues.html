@@ -6,6 +6,7 @@
       <th class="column">Text description</th>
       <th class="column">Status</th>
       <th class="column">Solver</th>
+      <th class="column">Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -14,7 +15,8 @@
       <td class="column">{{ issue.category.name }}</td>
       <td class="column description">{{ issue.text_description }}</td>
       <td class="column">{{ issue.status }}</td>
-      <td class="column"{{ issue.solver.username }}</td>
+      <td class="column">{{ issue.solver.username || "none"}}</td>
+      <td class="column">ACTIONS</td>
     </tr>
   </tbody>
 </table>

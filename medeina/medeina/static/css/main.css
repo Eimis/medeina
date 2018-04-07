@@ -100,11 +100,15 @@ iframe {
   margin: 0 auto;
 }
 
+.general-errors-wrapper {
+  padding: 10px 10px 20px 10px;
+}
+.general-errors-wrapper span.fas {
+  color: red;
+}
 .general_errors {
   color: white;
-  padding: 10px;
 }
-
 .general_errors a {
   color: white;
   text-decoration: underline;

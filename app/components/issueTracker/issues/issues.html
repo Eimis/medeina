@@ -1,5 +1,9 @@
-<div class="general_errors" ng-bind-html="$ctrl.general_errors">
-  {{ $ctrl.general_errors }}
+
+<div class="general-errors-wrapper">
+  <span class="fas fa-exclamation-triangle" ng-if="$ctrl.general_errors"></span>
+  <span class="general_errors" ng-bind-html="$ctrl.general_errors">
+    {{ $ctrl.general_errors }}
+  </span>
 </div>
 
 <table>

@@ -6,7 +6,6 @@ var issuesController = function($rootScope, $scope, issuesModel) {
   ctrl.model = issuesModel;
 
   ctrl.$onInit = function() {
-    console.log('inited CHILD component');
     ctrl.syncIssues();
   };
 

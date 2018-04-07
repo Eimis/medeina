@@ -1,8 +1,11 @@
 var myApp = angular.module('issueTracker', ['ui.router', 'oc.lazyLoad', ]);
 
-myApp.config(function($stateProvider) {
+myApp.config(function($stateProvider, $httpProvider) {
 
   //$urlRouterProvider.otherwise('/');
+
+  $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+  $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
 
   $stateProvider
 

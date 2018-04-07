@@ -195,6 +195,10 @@ tbody tr:hover {
   padding-left: 40px;
 }
 
+.column.description {
+  padding: 15px;
+}
+
 @media screen and (max-width: 992px) {
   table {
     display: block;

@@ -12,7 +12,7 @@
     <tr ng-repeat="issue in $ctrl.issues">
       <td class="column">{{ issue.submitter.username }}</td>
       <td class="column">{{ issue.category.name }}</td>
-      <td class="column">{{ issue.text_description }}</td>
+      <td class="column description">{{ issue.text_description }}</td>
       <td class="column">{{ issue.status }}</td>
       <td class="column"{{ issue.solver.username }}</td>
     </tr>

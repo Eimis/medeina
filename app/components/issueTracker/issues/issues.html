@@ -1,20 +1,20 @@
 <table>
   <thead>
     <tr class="table100-head">
-      <th class="column1">Submitter</th>
-      <th class="column5">Category</th>
-      <th class="column3">Text description</th>
-      <th class="column4">Status</th>
-      <th class="column2">Solver</th>
+      <th class="column">Submitter</th>
+      <th class="column">Category</th>
+      <th class="column">Text description</th>
+      <th class="column">Status</th>
+      <th class="column">Solver</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="issue in $ctrl.issues">
-      <td class="column1">{{ issue.submitter.username }}</td>
-      <td class="column2">{{ issue.category.name }}</td>
-      <td class="column3">{{ issue.text_description }}</td>
-      <td class="column4">{{ issue.status }}</td>
-      <td class="column5">{{ issue.solver.username }}</td>
+      <td class="column">{{ issue.submitter.username }}</td>
+      <td class="column">{{ issue.category.name }}</td>
+      <td class="column">{{ issue.text_description }}</td>
+      <td class="column">{{ issue.status }}</td>
+      <td class="column"{{ issue.solver.username }}</td>
     </tr>
   </tbody>
 </table>

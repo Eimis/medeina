@@ -240,21 +240,24 @@ tbody tr:hover {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "Submitter";
+    content: "Title";
   }
   table tbody tr td:nth-child(2):before {
-    content: "Cateogry";
+    content: "Submitter";
   }
   table tbody tr td:nth-child(3):before {
-    content: "Text description";
+    content: "Cateogry";
   }
   table tbody tr td:nth-child(4):before {
-    content: "Status";
+    content: "Text description";
   }
   table tbody tr td:nth-child(5):before {
-    content: "Solver";
+    content: "Status";
   }
   table tbody tr td:nth-child(6):before {
+    content: "Solver";
+  }
+  table tbody tr td:nth-child(7):before {
     content: "Actions";
   }
 

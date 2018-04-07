@@ -1,6 +1,7 @@
 <table>
   <thead>
     <tr class="table100-head">
+      <th class="column">Title</th>
       <th class="column">Submitter</th>
       <th class="column">Category</th>
       <th class="column">Text description</th>
@@ -11,6 +12,7 @@
     </thead>
     <tbody>
     <tr ng-repeat="issue in $ctrl.issues | orderBy:['solved', ]">
+      <td class="column">{{ issue.title }}</td>
       <td class="column">{{ issue.submitter.username }}</td>
       <td class="column">{{ issue.category.name }}</td>
       <td class="column description">{{ issue.text_description }}</td>

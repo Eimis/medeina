@@ -20,6 +20,7 @@ class IssueCategory(models.Model):
 
 @python_2_unicode_compatible
 class Issue(models.Model):
+    solved = models.BooleanField(default=False)
     title = models.CharField(max_length=50)
     submitter = models.ForeignKey(User, related_name='submitted_issues')
     solver = models.ForeignKey(User, related_name='solved_issues', null=True)

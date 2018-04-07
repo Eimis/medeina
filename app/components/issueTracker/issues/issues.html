@@ -1,3 +1,7 @@
+<div class="general_errors" ng-bind-html="$ctrl.general_errors">
+  {{ $ctrl.general_errors }}
+</div>
+
 <table>
   <thead>
     <tr class="table100-head">
@@ -24,7 +28,7 @@
           ng-if="!issue.solved"
           >Mark as solved <i class="fas fa-check"></i></span>
 
-        <p ng-repeat="(key, errors) in $ctrl.errors" ng-if="key == issue.pk">
+        <p ng-repeat="(key, errors) in $ctrl.field_errors" ng-if="key == issue.pk">
           <span ng-repeat="error in errors.solved">
             {{ error }}
           </span>

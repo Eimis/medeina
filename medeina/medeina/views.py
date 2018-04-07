@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
 from medeina.models import Issue
+from medeina.permissions import UserIsAuthenticated
 from medeina.serializers import IssueSerializer
 
 from rest_framework import generics
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
 
 def main(request):
@@ -40,7 +40,7 @@ class UpdateIssueView(generics.UpdateAPIView):
     * Requires no special permissions
     """
     # authentication_classes = (authentication.TokenAuthentication,)
-    # permission_classes = (permissions.IsAdminUser,)
+    permission_classes = (UserIsAuthenticated, )
 
     queryset = Issue.objects.all()
     serializer_class = IssueSerializer

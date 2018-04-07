@@ -100,6 +100,16 @@ iframe {
   margin: 0 auto;
 }
 
+.general_errors {
+  color: white;
+  padding: 10px;
+}
+
+.general_errors a {
+  color: white;
+  text-decoration: underline;
+}
+
 .container-table100 {
   width: 100%;
   min-height: 100vh;

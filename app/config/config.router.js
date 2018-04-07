@@ -1,4 +1,4 @@
-var myApp = angular.module('issueTracker', ['ui.router', 'oc.lazyLoad', ]);
+var myApp = angular.module('issueTracker', ['ui.router', 'oc.lazyLoad', 'ngSanitize', ]);
 
 myApp.config(function($stateProvider, $httpProvider) {
 
@@ -12,6 +12,8 @@ myApp.config(function($stateProvider, $httpProvider) {
   .state('home', {
     url: '/',
     template: '<issue-tracker></issue-tracker>',
+    cache: false,
+    disableCache: true,
     resolve: {
       deps: ['$ocLazyLoad', function($ocLazyLoad) {
 

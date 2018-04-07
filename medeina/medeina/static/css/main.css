@@ -187,7 +187,6 @@ tbody tr {
 tbody tr:hover {
   color: #555555;
   background-color: #f5f5f5;
-  cursor: pointer;
 }
 
 .column {
@@ -197,6 +196,15 @@ tbody tr:hover {
 
 .column.description {
   padding: 15px 15px 15px 40px;
+}
+.mark-solved {
+  padding: 10px;
+}
+.mark-solved:hover {
+  cursor: pointer;
+}
+.mark-solved i {
+  padding-left: 10px;
 }
 
 @media screen and (max-width: 992px) {

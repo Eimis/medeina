@@ -10,13 +10,24 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="issue in $ctrl.issues">
+    <tr ng-repeat="issue in $ctrl.issues | orderBy:['solved', ]">
       <td class="column">{{ issue.submitter.username }}</td>
       <td class="column">{{ issue.category.name }}</td>
       <td class="column description">{{ issue.text_description }}</td>
       <td class="column">{{ issue.status }}</td>
       <td class="column">{{ issue.solver.username || "none"}}</td>
-      <td class="column">ACTIONS</td>
+      <td class="column">
+        <span class="badge badge-success mark-solved"
+          ng-click="$ctrl.markAsSolved(issue.pk)"
+          ng-if="!issue.solved"
+          >Mark as solved <i class="fas fa-check"></i></span>
+
+        <p ng-repeat="(key, errors) in $ctrl.errors" ng-if="key == issue.pk">
+          <span ng-repeat="error in errors.solved">
+            {{ error }}
+          </span>
+        </p>
+      </td>
     </tr>
   </tbody>
 </table>

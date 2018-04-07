@@ -25,7 +25,9 @@ class IssueSerializer(serializers.ModelSerializer):
     class Meta:
         model = Issue
         fields = (
+            'pk',
             'title',
+            'solved',
             'submitter',
             'solver',
             'text_description',

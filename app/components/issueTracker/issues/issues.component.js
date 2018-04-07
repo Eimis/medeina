@@ -6,10 +6,26 @@ var issuesController = function($rootScope, $scope, issuesModel) {
   ctrl.model = issuesModel;
 
   ctrl.$onInit = function() {
-    console.log('inited CHILD component')
+    console.log('inited CHILD component');
+    ctrl.syncIssues();
+  };
+
+  ctrl.syncIssues = function() {
     ctrl.model.listData(ctrl).then(function(resp){
       ctrl.issues = resp.issues;
     });
+  };
+
+  ctrl.markAsSolved = function(issue_pk) {
+
+    ctrl.model.submitData(issue_pk).then(function(resp){
+      if (resp.ok) {
+        ctrl.syncIssues();
+      } else {
+        ctrl.errors = resp.errors;
+      }
+    });
+
   };
 
 };

@@ -31,6 +31,6 @@ class IssueSerializer(serializers.ModelSerializer):
             'submitter',
             'solver',
             'text_description',
-            'status',
+            'state',
             'category',
         )

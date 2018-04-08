@@ -4,7 +4,7 @@ from medeina.models import Issue, IssueCategory
 
 
 class IssueAdmin(admin.ModelAdmin):
-    readonly_fields = ('status',)
+    readonly_fields = ('state',)
 
 
 class IssueCategoryAdmin(admin.ModelAdmin):

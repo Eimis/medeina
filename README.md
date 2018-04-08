@@ -16,7 +16,7 @@ Setup:
 * run `source virtual/bin/activate` to activate your fresh virtual environment
 * run `pip install -r requirements.txt` to install backend dependencies
 * run `bower install` to install frontend dependencies
-* run `cd medeina/ && ./manage.py migrate` to run migrations
+* run `cd medeina/ && ./manage.py migrate` to run migrations (sqlite db is used)
 * run `./manage.py collectstatic`
 * `./manage.py runserver`
 * Visit http://localhost:8000/#/ (don't forget the # character!)
@@ -31,8 +31,14 @@ Key points:
 
 * Important notes:
 
+   * Issues can be created / modified via Django admin (http://localhost:8000/admin/)
+     and the main app interface (marking issues as 'solved', checking statistics, etc.)
+     can be done via `http://localhost:8000/#/`
    * The backend is implemented as a RESTful API with `django-rest-framework`,
      permissions, serializers, proper error messages and etc.
+   * The backend uses stateful approach, so during state transition some custom
+     code can be executed as well (f. ex. an email or notification can be sent,
+     see `states.py`)
    * Most of the functionality has docstrings and comments, so the code should
      be self-explanatory
    * The frontend runs as a separate Angular JS (`1.5.0`) single-page-application

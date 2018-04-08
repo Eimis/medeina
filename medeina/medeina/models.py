@@ -27,6 +27,8 @@ class Issue(models.Model):
     text_description = models.TextField()
     state = StateField(machine=IssueStates)
     category = models.ForeignKey(IssueCategory)
+    created_on = models.DateTimeField(auto_now_add=True)
+    solved_on = models.DateTimeField(null=True)
 
     def __str__(self):
         return self.title

@@ -1,7 +1,7 @@
 angular.module('issueTracker')
   .factory('issuesModel', function($http) {
 
-    function listData(scope, items) {
+    function listData() {
 
       var config = {
         headers: {
@@ -41,8 +41,28 @@ angular.module('issueTracker')
         });
     }
 
+    function getStats() {
+
+      var config = {
+        headers: {
+          'Accept': 'application/json'
+        },
+      };
+
+      return $http.get('/issues/stats', config)
+        .then(function(response) {
+          var stats = angular.fromJson(response.data);
+
+          return {
+            stats: stats,
+          };
+        })
+        .catch(function(response) {});
+    }
+
     return {
       listData: listData,
       submitData: submitData,
+      getStats: getStats,
     };
   });

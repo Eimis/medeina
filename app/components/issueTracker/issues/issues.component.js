@@ -10,8 +10,12 @@ var issuesController = function($rootScope, $scope, issuesModel, $sanitize) {
   };
 
   ctrl.syncIssues = function() {
-    ctrl.model.listData(ctrl).then(function(resp){
+    ctrl.model.listData().then(function(resp){
       ctrl.issues = resp.issues;
+    });
+
+    ctrl.model.getStats().then(function(resp){
+      ctrl.stats = resp.stats;
     });
   };
 

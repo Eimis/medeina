@@ -6,6 +6,7 @@ from medeina.permissions import UserIsAuthenticated, UserIsSuperuser
 from medeina.serializers import IssueSerializer
 
 from rest_framework import generics
+from rest_framework import views
 from rest_framework.response import Response
 
 
@@ -77,3 +78,25 @@ class UpdateIssueView(generics.UpdateAPIView):
             return Response(status=200, data=serializer.data)
         else:
             return Response({pk: serializer.errors}, status=400)
+
+
+class IssueStatsView(views.APIView):
+    """
+    View to return statistics about Issue solving time.
+
+    * Requires no authentication
+    * Requires no special permissions
+    """
+
+    # ony allow GET request:
+    http_method_names = ['get', ]
+
+    def get(self, request, format=None):
+
+        stats = {
+            'min': Issue.objects.get_shortest_solving_time(),
+            'max': Issue.objects.get_longest_solving_time(),
+            'avg': Issue.objects.get_average_solving_time(),
+        }
+
+        return Response(stats, status=200)

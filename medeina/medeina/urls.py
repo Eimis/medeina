@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from django.contrib import admin
 
-from medeina.views import main, ListIssuesView, UpdateIssueView
+from medeina.views import IssueStatsView, main, ListIssuesView, UpdateIssueView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -12,4 +12,5 @@ urlpatterns = [
         UpdateIssueView.as_view(),
         name='update_issue'
     ),
+    url(r'^issues/stats$', IssueStatsView.as_view(), name='issue_stats'),
 ]

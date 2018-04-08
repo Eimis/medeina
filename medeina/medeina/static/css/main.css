@@ -115,7 +115,7 @@ iframe {
 }
 .stats-wrapper div {
   padding-right: 30px;
-  display: inline;
+  padding-top: 10px;
 }
 .stats-wrapper div h4 {
   color: white;

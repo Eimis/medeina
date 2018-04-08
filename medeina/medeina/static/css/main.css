@@ -113,6 +113,14 @@ iframe {
   color: white;
   text-decoration: underline;
 }
+.stats-wrapper div {
+  padding-right: 30px;
+  display: inline;
+}
+.stats-wrapper div h4 {
+  color: white;
+  display: inline;
+}
 
 .container-table100 {
   width: 100%;

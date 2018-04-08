@@ -22,9 +22,6 @@ class ListIssuesView(generics.ListAPIView):
     * Requires no authentication
     * Requires no special permissions
     """
-    # authentication_classes = (authentication.TokenAuthentication,)
-    # permission_classes = (IsAdminUser,)
-
     queryset = Issue.objects.all()
     serializer_class = IssueSerializer
 
@@ -36,10 +33,9 @@ class UpdateIssueView(generics.UpdateAPIView):
     """
     View to mark issue as solved.
 
-    * Requires no authentication
-    * Requires no special permissions
+    * Requires to be authenticated
+    * Requires superuser permission
     """
-    # authentication_classes = (authentication.TokenAuthentication,)
     permission_classes = (UserIsAuthenticated, UserIsSuperuser)
 
     queryset = Issue.objects.all()
@@ -58,6 +54,7 @@ class UpdateIssueView(generics.UpdateAPIView):
 
         if serializer.is_valid():
             serializer.save()
+
             return Response(status=200, data=serializer.data)
         else:
             return Response({pk: serializer.errors}, status=400)

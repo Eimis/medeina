@@ -61,9 +61,11 @@ class UpdateIssueView(generics.UpdateAPIView):
                 'mark_as_solved',
                 request.user
             )
-
             serializer.save()
 
+            # TODO: one might want to implement another API endpoint for
+            # getting current user info, then passing it to the serializer via
+            # frontend:
             issue.solver = request.user
             issue.save()
 

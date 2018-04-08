@@ -21,11 +21,14 @@ class IssueManager(models.Manager):
     def humanize_timedelta(self, td):
         """returns human readable representation of timedelta value
         """
+
+        hours, remainder = divmod(td.seconds, 3600)
+        minutes, seconds = divmod(remainder, 60)
+
         return {
-            'days': td.days,
-            'hours': td.seconds // 3600,
-            'minutes': (td.seconds // 60) % 60,
-            'seconds': td.seconds,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds,
         }
 
     def get_average_solving_time(self):
@@ -40,6 +43,10 @@ class IssueManager(models.Manager):
             # )
         # )
         solved_issue_timedeltas = self.get_solved_issue_durations()
+
+        if not solved_issue_timedeltas:
+            return self.humanize_timedelta(datetime.timedelta(0))
+
         average_timedelta = sum(
             # giving datetime.timedelta(0) as the start value makes sum work
             # on timedeltas:
@@ -51,9 +58,15 @@ class IssueManager(models.Manager):
     def get_longest_solving_time(self):
         solved_issue_timedeltas = self.get_solved_issue_durations()
 
+        if not solved_issue_timedeltas:
+            return self.humanize_timedelta(datetime.timedelta(0))
+
         return self.humanize_timedelta(max(solved_issue_timedeltas))
 
     def get_shortest_solving_time(self):
         solved_issue_timedeltas = self.get_solved_issue_durations()
+
+        if not solved_issue_timedeltas:
+            return self.humanize_timedelta(datetime.timedelta(0))
 
         return self.humanize_timedelta(min(solved_issue_timedeltas))

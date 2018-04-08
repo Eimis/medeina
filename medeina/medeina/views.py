@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.utils import timezone
 
 from medeina.models import Issue
 from medeina.permissions import UserIsAuthenticated, UserIsSuperuser
@@ -65,8 +66,12 @@ class UpdateIssueView(generics.UpdateAPIView):
 
             # TODO: one might want to implement another API endpoint for
             # getting current user info, then passing it to the serializer via
-            # frontend:
+            # frontend
+            # Set issue solver:
             issue.solver = request.user
+
+            # Set issue solving TS:
+            issue.solved_on = timezone.now()
             issue.save()
 
             return Response(status=200, data=serializer.data)

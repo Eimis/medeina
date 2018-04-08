@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 
+from medeina.managers import IssueManager
 from medeina.states import IssueStates
 
 from django_states.fields import StateField
@@ -20,6 +21,8 @@ class IssueCategory(models.Model):
 
 @python_2_unicode_compatible
 class Issue(models.Model):
+    objects = IssueManager()
+
     solved = models.BooleanField(default=False)
     title = models.CharField(max_length=50)
     submitter = models.ForeignKey(User, related_name='submitted_issues')

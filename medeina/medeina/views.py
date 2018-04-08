@@ -35,6 +35,8 @@ class UpdateIssueView(generics.UpdateAPIView):
 
     * Requires to be authenticated
     * Requires superuser permission
+    * Permission to update Issue state is checked not only on this API
+      endpoint, but also on object level (see: medeina/states.py)
     """
     permission_classes = (UserIsAuthenticated, UserIsSuperuser)
 
@@ -53,7 +55,17 @@ class UpdateIssueView(generics.UpdateAPIView):
         )
 
         if serializer.is_valid():
+            # UserIsSuperuser permission class already cheched if user is
+            # allowed to access the endpoint, so:
+            issue.get_state_info().make_transition(
+                'mark_as_solved',
+                request.user
+            )
+
             serializer.save()
+
+            issue.solver = request.user
+            issue.save()
 
             return Response(status=200, data=serializer.data)
         else:

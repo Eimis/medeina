@@ -22,4 +22,4 @@ class SuperuserException(APIException):
     """
 
     status_code = HTTP_403_FORBIDDEN
-    default_detail = "This action is only allowed for Staff users"
+    default_detail = "This action is only allowed for superusers"

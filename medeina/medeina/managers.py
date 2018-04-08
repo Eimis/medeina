@@ -44,6 +44,7 @@ class IssueManager(models.Manager):
         # )
         solved_issue_timedeltas = self.get_solved_issue_durations()
 
+        # There can be no issues which are solved:
         if not solved_issue_timedeltas:
             return self.humanize_timedelta(datetime.timedelta(0))
 
@@ -58,6 +59,7 @@ class IssueManager(models.Manager):
     def get_longest_solving_time(self):
         solved_issue_timedeltas = self.get_solved_issue_durations()
 
+        # There can be no issues which are solved:
         if not solved_issue_timedeltas:
             return self.humanize_timedelta(datetime.timedelta(0))
 
@@ -66,6 +68,7 @@ class IssueManager(models.Manager):
     def get_shortest_solving_time(self):
         solved_issue_timedeltas = self.get_solved_issue_durations()
 
+        # There can be no issues which are solved:
         if not solved_issue_timedeltas:
             return self.humanize_timedelta(datetime.timedelta(0))
 

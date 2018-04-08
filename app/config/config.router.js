@@ -4,6 +4,7 @@ myApp.config(function($stateProvider, $httpProvider) {
 
   //$urlRouterProvider.otherwise('/');
 
+  //Make sure Django is not complaining about missing CSRF cookie:
   $httpProvider.defaults.xsrfCookieName = 'csrftoken';
   $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
 

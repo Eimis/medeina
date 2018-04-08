@@ -1,6 +1,7 @@
 angular.module('issueTracker')
   .factory('issuesModel', function($http) {
 
+    //A method to list all current Issues:
     function listData() {
 
       var config = {
@@ -20,6 +21,7 @@ angular.module('issueTracker')
         .catch(function(response) {});
     }
 
+    //A method to update Issue status:
     function submitData(issue_pk) {
 
       var config = {
@@ -41,6 +43,7 @@ angular.module('issueTracker')
         });
     }
 
+    //A method for getting statistics related to Issue solving time:
     function getStats() {
 
       var config = {
